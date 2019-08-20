@@ -1,0 +1,7 @@
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\bin\Debug\Advanced Calculator.exe.config
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\bin\Debug\Advanced Calculator.exe
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\bin\Debug\Advanced Calculator.pdb
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\obj\Debug\Advanced Calculator.csprojAssemblyReference.cache
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\obj\Debug\Advanced Calculator.csproj.CoreCompileInputs.cache
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\obj\Debug\Advanced Calculator.exe
+C:\Users\linus\source\repos\Advanced Calculator\Advanced Calculator\obj\Debug\Advanced Calculator.pdb
