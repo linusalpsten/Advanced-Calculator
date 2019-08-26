@@ -11,16 +11,16 @@ namespace Advanced_Calculator
     {
         static void Main(string[] args)
         {
-            string calculation = "((20+10)*4)+3*4+(12*29)";
+            //((20+10)*4)+3*4+(12*29)
+            string calculation = "(1+2)*(2+(2-3))/55*(2+3+4)-(4-5)";
             Console.WriteLine(Calculate(calculation).ToString());
         }
 
-        static float Calculate(string calculation)
+        static double Calculate(string calculation)
         {
             int lastindex = 0;
             int openParenthesisCount = 0;
             string simplified = "";
-            List<string> testlist = new List<string>();
 
             for (int i = 0; i < calculation.Length; i++)
             {
@@ -32,7 +32,6 @@ namespace Advanced_Calculator
                         if (i != lastindex && i != lastindex + 1)
                         {
                             simplified = new string(simplified.Concat(calculation.Substring(lastindex, i - lastindex)).ToArray());
-                            //testlist.Add(calculation.Substring(lastindex + 1, i - lastindex - 1));
                         }
                         lastindex = i;
                     }
@@ -44,20 +43,17 @@ namespace Advanced_Calculator
                     if (openParenthesisCount == 0)
                     {
                         simplified = new string(simplified.Concat(Calculate(calculation.Substring(lastindex + 1, i - lastindex - 1)).ToString()).ToArray());
-                        //testlist.Add(calculation.Substring(lastindex + 1, i - lastindex - 1));
                         lastindex = i + 1;
                     }
                 }
             }
-
             simplified = new string(simplified.Concat(calculation.Substring(lastindex, calculation.Length - lastindex)).ToArray());
 
             Console.WriteLine(simplified);
-            var result = CalculateSimple(simplified);
-            return result;
+            return CalculateSimple(simplified);
         }
 
-        static float CalculateSimple(string simplified)
+        static double CalculateSimple(string simplified)
         {
             Regex tester = new Regex(@"(\d+|[+\-*\/])");
             var matches = tester.Matches(simplified).Cast<Match>().Select(m => m.Value).ToArray();
@@ -116,7 +112,7 @@ namespace Advanced_Calculator
                     }
                 }
             }
-            return (float)Convert.ToDouble(matches[0]);
+            return Convert.ToDouble(matches[0]);
         }
     }
 }
